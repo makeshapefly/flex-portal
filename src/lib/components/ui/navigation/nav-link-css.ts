@@ -1,0 +1,22 @@
+export const navlinkColors: Record<UI.NavLinkVarientColor, string> = {
+  "default-primary": " navigation-primary",
+  "default-purple": " navigation-purple",
+  "default-green": " navigation-green",
+  "default-red": " navigation-red",
+  "default-yellow": " navigation-yellow",
+  "default-sky": " navigation-sky",
+  "default-pink": " navigation-pink",
+  "default-indigo": " navigation-indigo",
+  "default-orange": " navigation-orange",
+  "default-gray": " navigation-gray",
+  "animation-primary": " navigation-animation-primary",
+  "animation-purple": " navigation-animation-purple",
+  "animation-green": " navigation-animation-green",
+  "animation-red": " navigation-animation-red",
+  "animation-yellow": " navigation-animation-yellow",
+  "animation-sky": " navigation-animation-sky",
+  "animation-pink": " navigation-animation-pink",
+  "animation-indigo": " navigation-animation-indigo",
+  "animation-orange": " navigation-animation-orange",
+  "animation-gray": " navigation-animation-gray"
+};

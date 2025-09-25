@@ -1,0 +1,5 @@
+.backdrop-blur-felg {
+  z-index: 10; /* Ensure it doesn't interfere with modal stacking */
+  /* Ensure transparency */
+  filter: blur(1px);
+}

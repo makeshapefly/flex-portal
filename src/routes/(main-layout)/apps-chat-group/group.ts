@@ -1,0 +1,146 @@
+// src/lib/data.ts
+
+export const groups = [
+  {
+    name: 'Shopify Developers',
+    image: '/assets/images/brands/img-08.png',
+    message: 'Hello, How are you?',
+    time: '11:48AM',
+    badge: '2',
+    unread: true,
+    active: true
+  },
+  {
+    name: 'Social Medium Team',
+    image: '/assets/images/brands/img-12.png',
+    message: 'Hello, How are you?',
+    time: '11:48AM',
+    badge: '2',
+    unread: true,
+    active: false
+  },
+  {
+    name: 'Deployment Disruptor',
+    image: '/assets/images/brands/img-02.png',
+    message: 'Hello, How are you?',
+    time: '11:48AM',
+    unread: false,
+    active: false
+  },
+  {
+    name: 'Full-Stack Crew',
+    image: '/assets/images/brands/img-22.png',
+    message: 'Hello, How are you?',
+    time: '11:48AM',
+    unread: false,
+    active: false
+  },
+  {
+    name: 'UX/UI Avengers',
+    image: '/assets/images/brands/img-01.png',
+    message: 'Hello, How are you?',
+    time: '11:48AM',
+    unread: false,
+    active: false
+  }
+];
+
+export const messages = [
+  {
+    user: {
+      name: 'User 15',
+      avatar: '/assets/images/avatar/user-15.png',
+      status: 'online'
+    },
+    timestamp: 'Today, 09:59 AM',
+    message:
+      "Hey team, I hope everyone is doing well. Let's do a quick standup. What are everyone's updates for today?",
+    type: 'received',
+    id:1
+  },
+  {
+    user: {
+      name: 'User 17',
+      avatar: '/assets/images/avatar/user-17.png',
+      status: 'online'
+    },
+    timestamp: 'Today, 10:00 AM',
+    message:
+      "Morning! I’m working on the new theme design. Almost done with the homepage. I'll move on to the product pages next. Could use some feedback on the hero section if anyone has time.",
+    type: 'sent',
+    id:2
+  },
+  {
+    user: {
+      name: 'User 11',
+      avatar: '/assets/images/avatar/user-11.png',
+      status: 'online'
+    },
+    timestamp: 'Today, 10:11 AM',
+    message:
+      "Hey all. I’m debugging an issue with the checkout process. There seems to be a problem with the payment gateway integration. I'll keep you posted.",
+    type: 'received',
+    id:3
+  },
+  {
+    user: {
+      name: 'User 19',
+      avatar: '/assets/images/avatar/user-19.png',
+      status: 'online'
+    },
+    timestamp: 'Today, 10:11 AM',
+    message:
+      'Hi team! I’m working on integrating the third-party review system. I’ve run into a small issue with the API limits, but I’m handling it. Should have it sorted by the end of the day.',
+    type: 'received',
+    id:4
+  },
+  {
+    user: {
+      name: 'User 4',
+      avatar: '/assets/images/avatar/user-4.png',
+      status: 'online'
+    },
+    timestamp: 'Today, 10:11 AM',
+    message:
+      'Hi team. I’m testing the recent updates on the staging server. Found a couple of minor bugs in the user registration flow. Jamie, I’ll share the details with you in a bit.',
+    type: 'received',
+    id:5
+  },
+  {
+    user: {
+      name: 'User 20',
+      avatar: '/assets/images/avatar/user-20.png',
+      status: 'online'
+    },
+    timestamp: 'Today, 10:11 AM',
+    message:
+      'Thanks, Sarah. Casey, I’ll ping you when I start on the product pages. Your mockups look great!',
+    type: 'received',
+    id:6
+  },
+  {
+    user: {
+      name: 'User 17',
+      avatar: '/assets/images/avatar/user-17.png',
+      status: 'online'
+    },
+    timestamp: 'Today, 10:11 AM',
+    message:
+      "Sure thing, Sarah. I might need a second pair of eyes on the checkout flow once you're done with the gateway integration.",
+    type: 'sent',
+    id:7
+  }
+];
+
+export const members = [
+  { id: 1, name: 'Auli Ahokas', role: 'Admin', avatar: '/assets/images/avatar/user-5.png' },
+  { id: 2, name: 'Sirpa Kolkka', role: 'Team Leader', avatar: '/assets/images/avatar/user-6.png' },
+  { id: 3, name: 'Risto Saraste', role: 'Manager', avatar: '/assets/images/avatar/user-37.png' },
+  { id: 4, name: 'Leena Laine', role: 'Developer', avatar: '/assets/images/avatar/user-36.png' },
+  { id: 5, name: 'Mikko Virtanen', role: 'Developer', avatar: '/assets/images/avatar/user-9.png' },
+  { id: 6, name: 'Tuula Nieminen', role: 'Developer', avatar: '/assets/images/avatar/user-29.png' },
+  { id: 7, name: 'Jari Mäkinen', role: 'Developer', avatar: '/assets/images/avatar/user-31.png' },
+  { id: 8, name: 'Heidi Kinnunen', role: 'Developer', avatar: '/assets/images/avatar/user-12.png' },
+  { id: 9, name: 'Pekka Heikkinen', role: 'Designer', avatar: '/assets/images/avatar/user-21.png' },
+  { id: 10, name: 'Kati Laakso', role: 'Developer', avatar: '/assets/images/avatar/user-14.png' }
+];
