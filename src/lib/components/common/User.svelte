@@ -68,7 +68,7 @@
 			></div>
 		</div>
 		<h5 class="mb-1 mt-2">
-			Sophia Mia
+			XX
 			<LucideIcon
 				name="BadgeCheck"
 				class="text-primary-500 fill-primary-500/20 inline-block size-5"

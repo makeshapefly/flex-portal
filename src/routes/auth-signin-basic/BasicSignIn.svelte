@@ -3,11 +3,37 @@
 	import Col from '$lib/components/ui/grid/Col.svelte';
 	import Grid from '$lib/components/ui/grid/Grid.svelte';
 	import { validateForm, alert } from '../auth-signin-modern/validation';
+	import { getContext } from 'svelte';
+	import { auth } from '$lib/firebase/firebase.js';
+	import { signInWithEmailAndPassword } from "firebase/auth";
+	import { getUser } from "$lib/api/user.api";
+	import { goto } from '$app/navigation';
 
-	// Form data and alert state
-	let formData = {
-		emailOrUsername: 'admin@example.com',
-		password: 'admin@123'
+	let formData = $state({
+		email: '',
+		password: ''
+	});
+
+	const { user, setToken, setUser } = getContext("user");
+
+	const signIn = async () => {
+		signInWithEmailAndPassword(auth, formData.email, formData.password)
+			.then(async (userCredential) => {
+				// Signed in
+				const firebaseUser = userCredential.user;
+				const accessToken = await firebaseUser.getIdToken();
+				const uid = firebaseUser.uid;
+				setToken(accessToken)
+				const retrievedUser: WebUser = await getUser(uid, accessToken);
+				setUser(retrievedUser)
+				//console.log("user is " + user);
+
+				goto('/index');
+			})
+			.catch((error) => {
+				const errorCode = error.code;
+				const errorMessage = error.message;
+			});
 	};
 
 	let showPassword = false;
@@ -49,7 +75,7 @@
 					</p>
 
 					<!-- Form -->
-					<form on:submit|preventDefault={validateForm}>
+					<form on:submit|preventDefault={signIn}>
 						{#if $alert.isVisible}
 							<div
 								class="relative rounded-md py-3 text-sm ltr:pr-7 ltr:pl-5 rtl:pr-5 rtl:pl-7 {$alert.type}"
@@ -72,7 +98,7 @@
 								<input
 									type="text"
 									id="emailOrUsername"
-									bind:value={formData.emailOrUsername}
+									bind:value={formData.email}
 									class="form-input w-full"
 									placeholder="Enter your email or username"
 								/>

@@ -2,6 +2,8 @@
 	import { writable } from 'svelte/store'; // Import writable store
 	import { formDetails, errors, validateForm } from './signup'; // Import the form, errors, and validation function
 	import LucideIcon from '$lib/components/common/LucideIcon.svelte'; // Import the icon component
+	import { getContext } from 'svelte';
+	import { auth } from '$lib/firebase/firebase.js';
 
 	// Declare writable stores to manage password visibility
 	const showPassword = writable(false);
@@ -16,6 +18,28 @@
 	function toggleShowConfirmPassword() {
 		showConfirmPassword.update((value) => !value); // Toggle confirm password visibility
 	}
+
+	let formData = $state({
+		email: '',
+		password: ''
+	});
+
+	const signIn = async () => {
+		signInWithEmailAndPassword(auth, formData.email, formData.password)
+			.then(async (userCredential) => {
+				// Signed in
+				const user = userCredential.user;
+				const accessToken = await user.getIdToken();
+				console.log(accessToken);
+				
+
+				//goto('/dashboards/analytics');
+			})
+			.catch((error) => {
+				const errorCode = error.code;
+				const errorMessage = error.message;
+			});
+	};
 </script>
 
 <div
@@ -48,7 +72,7 @@
 							class="link link-primary font-medium">Sign In</a
 						>
 					</p>
-					<form on:submit|preventDefault={validateForm}>
+					<form on:submit|preventDefault={signIn}>
 						<div class="mt-5 grid grid-cols-12 gap-4">
 							<div class="col-span-12 md:col-span-6">
 								<label for="firstNameInput" class="form-label">First Name</label>
@@ -99,7 +123,7 @@
 									id="emailInput"
 									class="form-input w-full"
 									placeholder="Enter your email"
-									bind:value={$formDetails.email}
+									bind:value={formData.email}
 									on:input={() => validateForm()}
 								/>
 								{#if $errors.email}
@@ -114,7 +138,7 @@
 									<input
 										id="passwordInput"
 										type="password"
-										bind:value={$formDetails.password}
+										bind:value={$formData.password}
 										class="form-input ltr:pr-8 rtl:pl-8"
 										placeholder="Enter your password"
 									/>
