@@ -1,7 +1,7 @@
 <script>
-	import LandingInvoice from './LandingInvoice.svelte';
+	import Step1Form from './Step1Form.svelte';
 </script>
 
 <div class="text-16 font-body dark:bg-body-invoice dark:text-white">
-	<LandingInvoice />
+	<Step1Form />
 </div>

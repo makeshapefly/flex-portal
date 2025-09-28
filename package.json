@@ -70,7 +70,7 @@
 		"shiki": "^1.21.0",
 		"simplebar": "^5.3.6",
 		"sortablejs": "^1.15.6",
-		"svelte-datatable": "^2.0.1",		
+		"svelte-datatable": "^2.0.1",
 		"svelte-i18n": "^4.0.1",
 		"svelte-persisted-store": "^0.11.0",
 		"swiper": "^11.1.14",

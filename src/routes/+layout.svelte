@@ -12,6 +12,7 @@
 	import BackdropOverlay from '$lib/components/ui/modalv2/BackdropOverlay.svelte';
 	import type { WebUser } from '../types/webUser';
 	import { getUser } from '$lib/api/user.api';
+	import { page } from '$app/stores';
 
 	let searchTerm = '';
 
@@ -37,6 +38,10 @@
 
 	onMount(async () => {
 		updateAttributes();
+		const pathname = $page.url.pathname;
+		const rootDir = pathname.split('/')[1] || '';
+
+		console.log('Current path:', rootDir);
 		await auth.authStateReady();
 		const firebaseUser = auth.currentUser;
 		if (firebaseUser) {
@@ -48,7 +53,9 @@
 			user.name = retrievedUser.name;
 			user.customer = retrievedUser.customer;
 		} else {
-			goto('/auth-signin-basic');
+			if (!rootDir.startsWith("public")) {
+				goto('/auth-signin-basic');
+			}			
 		}
 	});
 </script>

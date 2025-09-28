@@ -102,7 +102,7 @@ const menudata: Array<UI.ISeperator | UI.IMenu | UI.IMenuLink> = [
   },
   {
     id: 0,
-    title: 'Landing Page',
+    title: 'Landing Page2',
     lang: 'pe-landing-page',
     icon: 'Box',
     level: 'main',
@@ -121,9 +121,9 @@ const menudata: Array<UI.ISeperator | UI.IMenu | UI.IMenuLink> = [
       },
       {
         id: 0,
-        title: 'Invoice',
+        title: 'Step 1',
         lang: 'pe-invoice',
-        link: '/landing-invoice'
+        link: '/public-step1'
       },
       {
         id: 0,
